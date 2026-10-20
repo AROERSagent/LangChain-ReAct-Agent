@@ -1,0 +1,19 @@
+# ==============================================
+# 数据库配置
+#
+# 本地开发默认 SQLite：零安装，数据库就是一个文件，开箱即用。
+#
+# 切换到 MySQL 只需改下面这一行 url，代码完全不用动：
+#   1) 装驱动：pip install pymysql
+#   2) 先在 MySQL 里建库：CREATE DATABASE react_agent CHARACTER SET utf8mb4;
+#   3) 把 url 改成：
+#      url : mysql+pymysql://root:你的密码@127.0.0.1:3306/react_agent?charset=utf8mb4
+#   4) 重跑 python -m db.import_records 导入数据
+#
+# 说明：charset 必须带 utf8mb4，否则中文和 emoji 会报错。
+# ==============================================
+
+url : sqlite:///data/react_agent.db
+
+# 设为 true 会把每条 SQL 打到控制台，排查问题时临时开启
+echo : false

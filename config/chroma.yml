@@ -1,0 +1,17 @@
+collection_name : agent
+persist_directory : chroma_db
+k :  3
+data_path : data
+md5_hex_store : md5.txt
+allow_knowledge_file_type : ["txt","pdf"]
+
+chunk_size : 200
+chunk_overlap : 20
+separators : ["\n\n","。",".","?","？","!"," ",""]
+
+# 两级检索：先用向量粗召回 recall_k 条，再用 rerank 模型精排出 k 条。
+# rerank_enabled 设为 false 时退化为纯向量检索，便于对比两种模式的效果差异。
+rerank_enabled : true
+rerank_model_name : qwen3.7-text-rerank
+recall_k : 20
+

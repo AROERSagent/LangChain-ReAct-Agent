@@ -1,0 +1,9 @@
+external_data_path: data/external/records.csv
+
+# 单次问答允许的最大工具调用轮数。
+# 提示词里的"调用5次后回复不知道"只是给模型的建议，模型不遵守时仍会一直调下去，
+# 这里的 recursion_limit 是代码层面的硬约束，用来兜住跑飞和费用失控。
+recursion_limit : 12
+
+# 联网搜索返回的条数
+tavily_max_results : 3

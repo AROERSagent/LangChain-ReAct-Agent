@@ -1,0 +1,39 @@
+# ==============================================
+# LangChain ReAct Agent · 智能客服
+# 安装：pip install -r requirements.txt
+# ==============================================
+
+# LangChain 核心
+langchain>=0.3,<2
+langchain-core>=0.3.18
+langchain-community>=0.3
+
+# 向量数据库
+# 说明：chromadb 0.5.x / 0.6.x 强制依赖 chroma-hnswlib==0.7.6，
+# 而该版本没有 Python 3.12 及以上的 Windows 预编译包，会退化成源码编译
+# 并报错 "Microsoft Visual C++ 14.0 or greater is required"。
+# 1.3.5 起 chroma-hnswlib 只在 dev 依赖里，安装不再需要 C++ 编译工具。
+langchain-chroma>=0.2.6
+chromadb>=1.3.5,<2.0.0
+langchain-text-splitters>=0.3.2
+
+# Agent 编排
+langgraph>=0.2.50
+
+# 前端
+streamlit>=1.40.1
+
+# 文档处理
+pypdf>=5.1.0
+pyyaml>=6.0.2
+python-dotenv>=1.0.0
+
+# 阿里云百炼模型（同时用于 rerank 重排序）
+dashscope>=1.20.14
+
+# 联网搜索工具（可选，未配置 TAVILY_API_KEY 时该工具自动禁用）
+langchain-tavily>=0.2.18
+
+# 数据库 ORM
+# 本地默认 SQLite（零安装）；切 MySQL 时另需 pip install pymysql
+sqlalchemy>=2.0
